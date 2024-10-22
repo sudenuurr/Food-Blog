@@ -28,7 +28,7 @@
   <body>
     <main>
       <!-- !HEADER START -->
-      <header class="header container">
+      <header id="header" class="header container">
         <div class="header-logo-container">
           <img
             src="./images/logo/logo-header.png"
@@ -73,6 +73,12 @@
       <!-- !FEATURE -->
       <section class="feature container">
         <h2 class="title">Featured recipes</h2>
+        <div class="progress">
+          <div class="progress-container">
+            <div class="progress-bar"></div>
+            <div class="progress-text">1 of 4</div>
+          </div>
+        </div>
         <div class="featured">
           <div class="feature-item">
             <div class="featured-card">Vegetarian</div>
@@ -306,6 +312,9 @@
                 class="post-image"
               />
               <div class="post-card dessert-card">Desserts</div>
+              <div class="post-video-play-button">
+                <i class="fa-solid fa-play"></i>
+              </div>
             </div>
             <div class="post-content">
               <div class="post-meta">
@@ -351,7 +360,7 @@
             <div class="post-content">
               <div class="post-meta">
                 <span class="post-duration">
-                  <i class="fa-solid fa-video"></i>
+                  <i class="fa-regular fa-clock"></i>
                   17 min — 4-6 portions
                 </span>
               </div>
@@ -465,6 +474,9 @@
                 class="post-image"
               />
               <div class="post-card soups-card">Soups</div>
+              <div class="post-video-play-button">
+                <i class="fa-solid fa-play"></i>
+              </div>
             </div>
             <div class="post-content">
               <div class="post-meta">
@@ -496,126 +508,308 @@
               </div>
             </div>
           </div>
+          <div class="pagination-container">
+            <div class="pagination-info">
+              <span class="pagination-label">Show</span>
+              <div class="pagination-dropdown">
+                <select class="pagination-select">
+                  <option value="6">6</option>
+                  <option value="12">12</option>
+                  <option value="20">20</option>
+                  <option value="30">30</option>
+                  <option value="40">40</option>
+                </select>
+              </div>
+              <span class="pagination-text">posts per page</span>
+            </div>
+
+            <div class="pagination-controls">
+              <button class="pagination-arrow left-arrow"><</button>
+              <button class="pagination-page">1</button>
+              <button class="pagination-page active">2</button>
+              <button class="pagination-page">3</button>
+              <button class="pagination-page">4</button>
+              <span class="pagination-dots">...</span>
+              <button class="pagination-page">10</button>
+              <button class="pagination-arrow right-arrow">></button>
+            </div>
+          </div>
         </div>
         <div class="ingredients-section">
-          <h3 class="ingredients-title">Ingredients</h3>
-          <ul class="ingredients-list">
-            <li class="ingredients-item">
-              <i class="fa-solid fa-chevron-right ingredients-icon"></i>
-              <a href="#" class="ingredient-link">Apple</a>
-              <p class="ingredient-quantity">23</p>
-            </li>
-            <li class="ingredients-item">
-              <i class="fa-solid fa-chevron-right ingredients-icon"></i>
-              <a href="#" class="ingredient-link">Banana</a>
-              <p class="ingredient-quantity">14</p>
-            </li>
-            <li class="ingredients-item">
-              <i class="fa-solid fa-chevron-right ingredients-icon"></i>
-              <a href="#" class="ingredient-link">Berries</a>
-              <p class="ingredient-quantity">7</p>
-            </li>
-            <li class="ingredients-item">
-              <i class="fa-solid fa-chevron-right ingredients-icon"></i>
-              <a href="#" class="ingredient-link">Cabbage</a>
-              <p class="ingredient-quantity">19</p>
-            </li>
-            <li class="ingredients-item">
-              <i class="fa-solid fa-chevron-right ingredients-icon"></i>
-              <a href="#" class="ingredient-link">Corn</a>
-              <p class="ingredient-quantity">8</p>
-            </li>
-            <li class="ingredients-item">
-              <i class="fa-solid fa-chevron-right ingredients-icon"></i>
-              <a href="#" class="ingredient-link">Cucumber</a>
-              <p class="ingredient-quantity">25</p>
-            </li>
-            <li class="ingredients-item">
-              <i class="fa-solid fa-chevron-right ingredients-icon"></i>
-              <a href="#" class="ingredient-link">Egg</a>
-              <p class="ingredient-quantity">14</p>
-            </li>
-            <li class="ingredients-item">
-              <i class="fa-solid fa-chevron-right ingredients-icon"></i>
-              <a href="#" class="ingredient-link">Herbs</a>
-              <p class="ingredient-quantity">27</p>
-            </li>
-            <li class="ingredients-item">
-              <i class="fa-solid fa-chevron-right ingredients-icon"></i>
-              <a href="#" class="ingredient-link">Potato</a>
-              <p class="ingredient-quantity">29</p>
-            </li>
-            <li class="ingredients-item">
-              <i class="fa-solid fa-chevron-right ingredients-icon"></i>
-              <a href="#" class="ingredient-link">Tomatoes</a>
-              <p class="ingredient-quantity">32</p>
-            </li>
-            <li class="ingredients-item">
-              <i class="fa-solid fa-chevron-right ingredients-icon"></i>
-              <a href="#" class="ingredient-link">Watermelon</a>
-              <p class="ingredient-quantity">4</p>
-            </li>
-            <li class="ingredients-item">
-              <i class="fa-solid fa-chevron-right ingredients-icon"></i>
-              <a href="#" class="ingredient-link">Apple</a>
-              <p class="ingredient-quantity">23</p>
-            </li>
-          </ul>
-          <h3 class="ingredients-title">Popular recipes</h3>
-          <div class="recipe-card">
-            <img
-              src="./images/post/Cupcake.jpg"
-              alt="Cupcake"
-              class="recipe-image"
-            />
-            <h4 class="recipe-title">
-              Sweet Cream Cupcake
-              <p class="recipe-author">by Amelie Mayer</p>
-            </h4>
+          <div class="ingredients">
+            <h3 class="ingredients-title">Ingredients</h3>
+            <ul class="ingredients-list">
+              <li class="ingredients-item">
+                <i class="fa-solid fa-chevron-right ingredients-icon"></i>
+                <a href="#" class="ingredient-link">Apple</a>
+                <p class="ingredient-quantity">23</p>
+              </li>
+              <li class="ingredients-item">
+                <i class="fa-solid fa-chevron-right ingredients-icon"></i>
+                <a href="#" class="ingredient-link">Banana</a>
+                <p class="ingredient-quantity">14</p>
+              </li>
+              <li class="ingredients-item">
+                <i class="fa-solid fa-chevron-right ingredients-icon"></i>
+                <a href="#" class="ingredient-link">Berries</a>
+                <p class="ingredient-quantity">7</p>
+              </li>
+              <li class="ingredients-item">
+                <i class="fa-solid fa-chevron-right ingredients-icon"></i>
+                <a href="#" class="ingredient-link">Cabbage</a>
+                <p class="ingredient-quantity">19</p>
+              </li>
+              <li class="ingredients-item">
+                <i class="fa-solid fa-chevron-right ingredients-icon"></i>
+                <a href="#" class="ingredient-link">Corn</a>
+                <p class="ingredient-quantity">8</p>
+              </li>
+              <li class="ingredients-item">
+                <i class="fa-solid fa-chevron-right ingredients-icon"></i>
+                <a href="#" class="ingredient-link">Cucumber</a>
+                <p class="ingredient-quantity">25</p>
+              </li>
+              <li class="ingredients-item">
+                <i class="fa-solid fa-chevron-right ingredients-icon"></i>
+                <a href="#" class="ingredient-link">Egg</a>
+                <p class="ingredient-quantity">14</p>
+              </li>
+              <li class="ingredients-item">
+                <i class="fa-solid fa-chevron-right ingredients-icon"></i>
+                <a href="#" class="ingredient-link">Herbs</a>
+                <p class="ingredient-quantity">27</p>
+              </li>
+              <li class="ingredients-item">
+                <i class="fa-solid fa-chevron-right ingredients-icon"></i>
+                <a href="#" class="ingredient-link">Potato</a>
+                <p class="ingredient-quantity">29</p>
+              </li>
+              <li class="ingredients-item">
+                <i class="fa-solid fa-chevron-right ingredients-icon"></i>
+                <a href="#" class="ingredient-link">Tomatoes</a>
+                <p class="ingredient-quantity">32</p>
+              </li>
+              <li class="ingredients-item">
+                <i class="fa-solid fa-chevron-right ingredients-icon"></i>
+                <a href="#" class="ingredient-link">Watermelon</a>
+                <p class="ingredient-quantity">4</p>
+              </li>
+              <li class="ingredients-item">
+                <i class="fa-solid fa-chevron-right ingredients-icon"></i>
+                <a href="#" class="ingredient-link">Apple</a>
+                <p class="ingredient-quantity">23</p>
+              </li>
+            </ul>
           </div>
-          <div class="recipe-card">
-            <img
-              src="./images/post/Breakfast.jpg"
-              alt="Cupcake"
-              class="recipe-image"
-            />
-            <h4 class="recipe-title">
-              Keto Paleo Carb-Free Breakfast
-              <p class="recipe-author">by Amelie Mayer</p>
-            </h4>
+          <div class="popular-recipes">
+            <h3 class="ingredients-title">Popular recipes</h3>
+            <div class="recipe-card">
+              <img
+                src="./images/post/Cupcake.jpg"
+                alt="Cupcake"
+                class="recipe-image"
+              />
+              <h4 class="recipe-title">
+                Sweet Cream Cupcake
+                <p class="recipe-author">by Amelie Mayer</p>
+              </h4>
+            </div>
+            <div class="recipe-card">
+              <img
+                src="./images/post/Breakfast.jpg"
+                alt="Cupcake"
+                class="recipe-image"
+              />
+              <h4 class="recipe-title">
+                Keto Paleo Carb-Free Breakfast
+                <p class="recipe-author">by Amelie Mayer</p>
+              </h4>
+            </div>
+            <div class="recipe-card">
+              <img
+                src="./images/post/Sugar-Free.jpg"
+                alt="Cupcake"
+                class="recipe-image"
+              />
+              <h4 class="recipe-title">
+                Sugar-Free Coconut Yogurt with Mango
+                <p class="recipe-author">by Amelie Mayer</p>
+              </h4>
+            </div>
           </div>
-          <div class="recipe-card">
-            <img
-              src="./images/post/Sugar-Free.jpg"
-              alt="Cupcake"
-              class="recipe-image"
-            />
-            <h4 class="recipe-title">
-              Sugar-Free Coconut Yogurt with Mango
-              <p class="recipe-author">by Amelie Mayer</p>
-            </h4>
+          <div class="popular-tag">
+            <h3 class="ingredients-title">Popular tags</h3>
+            <div class="tag-container">
+              <a href="#" class="tag">#bakery</a>
+              <a href="#" class="tag">#cookbook</a>
+              <a href="#" class="tag">#cuisine</a>
+              <a href="#" class="tag">#asian food</a>
+              <a href="#" class="tag">#tips</a>
+              <a href="#" class="tag">#recipe</a>
+              <a href="#" class="tag">#chef</a>
+              <a href="#" class="tag">#vegetarian</a>
+            </div>
           </div>
-          <h3 class="ingredients-title">Popular tags</h3>
-
-          <div class="tag-container">
-            <a href="#" class="tag">#bakery</a>
-            <a href="#" class="tag">#cookbook</a>
-            <a href="#" class="tag">#cuisine</a>
-            <a href="#" class="tag">#asian food</a>
-            <a href="#" class="tag">#tips</a>
-            <a href="#" class="tag">#recipe</a>
-            <a href="#" class="tag">#chef</a>
-            <a href="#" class="tag">#vegetarian</a>
-          </div>
-          <h3 class="ingredients-title">Follow me</h3>
-          <div class="social-icons">
-            <i class="fa-brands fa-facebook-f icon-item"></i>
-            <i class="fa-brands fa-twitter icon-item"></i>
-            <i class="fa-brands fa-instagram icon-item"></i>
-            <i class="fa-brands fa-pinterest-p icon-item"></i>
+          <div class="follow">
+            <h3 class="ingredients-title">Follow me</h3>
+            <div class="social-icons">
+              <i class="fa-brands fa-facebook-f icon-item"></i>
+              <i class="fa-brands fa-twitter icon-item"></i>
+              <i class="fa-brands fa-instagram icon-item"></i>
+              <i class="fa-brands fa-pinterest-p icon-item"></i>
+            </div>
           </div>
         </div>
       </section>
+      <!-- !VİDEO RECİPES -->
+      <section class="video-recipes container">
+        <div class="video-header">
+          <h2 class="title">New video recipes every Sunday</h2>
+          <p class="video-description">
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+            accusantium doloremque laudantium, totam rem aperiam eaque ipsa
+            quae.
+          </p>
+        </div>
+
+        <div class="video-gallery">
+          <div class="video-item">
+            <img src="./images/video-recipes/video.jpg" alt="Vegetarian Dish" />
+            <span class="gallery-caption">Gallery video caption</span>
+            <div class="video-play-button">
+              <i class="fa-solid fa-play"></i>
+            </div>
+          </div>
+
+          <div class="video-item">
+            <img src="./images/video-recipes/video2.jpg" alt="Asparagus Dish" />
+            <span class="gallery-caption">Gallery video caption</span>
+            <div class="video-play-button">
+              <i class="fa-solid fa-play"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="video-pagination">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </section>
+      <!-- !AUTHOR -->
+      <section class="author container">
+        <img src="./images/author.jpg" alt="author" class="author-image" />
+        <div class="author-details">
+          <h2 class="author-name">Hi! I am Amelie</h2>
+          <p class="author-title">Amateur chef and creator of this blog</p>
+          <p class="author-description">
+            At vero eos et accusamus et iusto odio dignissimos ducimus qui
+            blanditiis praesentium voluptatum deleniti atque corrupti quos
+            dolores et quas molestias excepturi sint occaecati cupiditate non
+            provident, similique sunt in culpa qui officia deserunt mollitia
+            animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis
+            est et expedita distinctio.
+          </p>
+          <a href="#" class="btn author-cta">Get to know me better</a>
+        </div>
+      </section>
+      <!-- !INSTAGRAM -->
+      <section class="follow-instagram">
+        <h2 class="instagram-heading">
+          Follow <span class="instagram-username">@amelie_chef</span> on
+          Instagram
+        </h2>
+        <div class="instagram-gallery">
+          <img
+            src="./images/instagram/01.jpg"
+            alt="01"
+            class="instagram-image"
+          />
+          <img
+            src="./images/instagram/02.jpg"
+            alt="02"
+            class="instagram-image"
+          />
+          <img
+            src="./images/instagram/03.jpg"
+            alt="03"
+            class="instagram-image"
+          />
+          <img
+            src="./images/instagram/04.jpg"
+            alt="04"
+            class="instagram-image"
+          />
+          <img
+            src="./images/instagram/05.jpg"
+            alt="05"
+            class="instagram-image"
+          />
+          <img
+            src="./images/instagram/06.jpg"
+            alt="06"
+            class="instagram-image"
+          />
+        </div>
+      </section>
     </main>
+    <!-- !FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="contacts">
+            <h4 class="footer-title">Contacts</h4>
+            <ul class="contacts-list">
+              <li class="contact-item">
+                <i class="fa-regular fa-envelope"></i> amelie.chef@example.com
+              </li>
+              <li class="contact-item">
+                <i class="fa-solid fa-phone"></i> 910-784-8015
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-follow">
+            <h4 class="footer-title">Follow</h4>
+            <div class="social-icons">
+              <i class="fa-brands fa-facebook-f icon-item"></i>
+              <i class="fa-brands fa-twitter icon-item"></i>
+              <i class="fa-brands fa-instagram icon-item"></i>
+              <i class="fa-brands fa-pinterest-p icon-item"></i>
+            </div>
+          </div>
+
+          <div class="subscribe">
+            <h4 class="footer-title">Subscribe and never miss a post!</h4>
+            <form class="subscribe-form">
+              <div class="input-container">
+                <i class="fa-regular fa-envelope input-icon"></i>
+                <input
+                  type="email"
+                  class="email-input"
+                  placeholder="Your email"
+                />
+              </div>
+              <button type="submit" class="btn">Subscribe*</button>
+            </form>
+
+            <p class="subscribe-text">
+              *Subscribe to our newsletter to receive early discount offers,
+              updates and new products info.
+            </p>
+          </div>
+        </div>
+        <div class="footer-info">
+          <span class="footer-copyright">
+            © All rights reserved. Made by
+            <a href="#" class="footer-copyright-link">Createx Studio</a>
+          </span>
+        </div>
+      </div>
+    </footer>
+    <a class="gotoback" href="#header">
+      <span class="top">Top</span>
+      <i class="fa-solid fa-arrow-up"></i>
+    </a>
   </body>
 </html>

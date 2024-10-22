@@ -166,6 +166,39 @@ p {
 .feature {
   padding: 96px 15px;
 }
+.progress {
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: flex-end;
+}
+.progress-container {
+  width: 100%;
+  max-width: 175px;
+  height: 5px;
+  background-color: #ddd;
+  border-radius: 10px;
+  position: relative;
+  margin-top: 10px;
+}
+
+.progress-bar {
+  width: 30%;
+  height: 100%;
+  background-color: var(--btnbgcolor);
+  border-radius: 10px;
+}
+
+.progress-text {
+  font-size: 16px;
+  color: var(--paragraphcolor);
+  position: absolute;
+  top: -40px;
+  right: 73px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Metni yatay ortalamak için */
+}
 .feature-divider {
   height: 15px;
   width: 1px;
@@ -237,6 +270,7 @@ p {
 .feature-item:hover .image-card {
   display: block;
 }
+
 .feature-item::before {
   display: block;
   position: absolute;
@@ -336,31 +370,31 @@ p {
   line-height: 1.5;
   color: #737491;
   border: 1px solid #dfdfeb;
-  padding-right: 44px; /* Sağ tarafa ikon için yer açılıyor */
-  width: 87%; /* Tam genişlik kaplaması */
-  box-sizing: border-box; /* Padding dahil genişlik hesaplansın */
+  padding-right: 44px;
+  width: 87%;
+  box-sizing: border-box;
   box-shadow: 0 0 0 0 transparent;
   transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 .email-input:focus {
-  outline: none; /* Varsayılan mavi kenar kalksın */
-  border-color: rgba(160, 128, 249, 0.6); /* Mor kenar rengi, %80 opak */
-  box-shadow: 0 0 2px rgba(160, 128, 249, 0.4); /* Mor renkte box-shadow, %40 opak */
+  outline: none;
+  border-color: rgba(160, 128, 249, 0.6);
+  box-shadow: 0 0 2px rgba(160, 128, 249, 0.4);
 }
 
 .submit-icon {
   position: absolute;
-  right: 0; /* Sağ kenara sıfır konumlandır */
+  right: 0;
   top: 0;
-  height: 100%; /* İkonun dikeyde inputun tamamını kaplaması */
-  width: 60px; /* İkonun genişliği */
-  background-color: var(--btncolor); /* İkon arka plan rengi */
-  color: white; /* İkon rengi */
-  border-top-right-radius: 12px; /* Sağ üst köşeyi yuvarla */
-  border-bottom-right-radius: 12px; /* Sağ alt köşeyi yuvarla */
+  height: 100%;
+  width: 60px;
+  background-color: var(--btncolor);
+  color: white;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
   display: flex;
   justify-content: center;
-  align-items: center; /* İkonu dikey ve yatay ortala */
+  align-items: center;
   cursor: pointer;
 }
 .submit-icon:hover {
@@ -410,6 +444,52 @@ p {
   height: 270px;
   cursor: pointer;
 }
+.post-image-wrapper {
+  position: relative;
+  width: 390px;
+  height: 100%;
+  overflow: hidden;
+}
+
+.post-image {
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.post-video-play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.post-video-play-button:hover .fa-play {
+  color: var(--btnbgcolor);
+}
+.post-video-play-button i {
+  color: var(--icon-color);
+  font-size: 15px;
+}
+.post-content {
+  display: flex;
+  padding: 32px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 55%;
+}
 .post-item:hover {
   border-color: rgba(160, 128, 249, 0.4);
   box-shadow: 0 0 2px rgba(160, 128, 249, 0.4);
@@ -445,22 +525,7 @@ p {
 .soups-card {
   background-color: #6a9bf4;
 }
-.post-image-wrapper {
-  position: relative;
-  width: 390px;
-  height: 100%;
-  overflow: hidden;
-}
-.post-image {
-  border-top-left-radius: 16px;
-  border-bottom-left-radius: 16px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+
 .post-duration {
   color: var(--paragraphcolor);
 }
@@ -493,20 +558,82 @@ p {
   background-color: #dfdfec;
   margin: 0 10px;
 }
-.post-content {
-  display: flex;
-  padding: 32px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-}
+
 .post-meta {
   padding-bottom: 4px;
   margin-bottom: 8px;
 }
+.pagination-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  margin: 20px 0;
+}
+
+.pagination-info {
+  display: flex;
+  align-items: center;
+}
+
+.pagination-label,
+.pagination-text {
+  color: #737491;
+  margin-right: 8px;
+}
+
+.pagination-dropdown {
+  position: relative;
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.pagination-select {
+  padding: 5px 10px;
+  border: 1px solid #dfdfeb;
+  border-radius: 8px;
+  color: #737491;
+  background-color: #fff;
+}
+
+.pagination-controls {
+  display: flex;
+  align-items: center;
+}
+
+.pagination-arrow,
+.pagination-page {
+  background-color: transparent;
+  padding: 5px 10px;
+  border-radius: 8px;
+  margin: 0 5px;
+  color: #737491;
+  cursor: pointer;
+  border: 1px solid transparent;
+  font-size: 14px;
+}
+
+.pagination-arrow:hover,
+.pagination-page:hover {
+  color: #4a4ad9;
+}
+
+.pagination-page.active {
+  border: 1px solid #dfdfeb;
+  border-color: #d3d0f7;
+  color: #4a4ad9;
+}
+
+.pagination-dots {
+  margin: 0 5px;
+  color: #737491;
+}
 /* ingredients */
 .ingredients-section {
   padding: 0 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 .ingredients-title {
   font-size: 18px;
@@ -581,4 +708,324 @@ p {
 .tag:hover {
   border: 1px solid rgba(115, 116, 145, 0.5);
   color: var(--icon-color);
+}
+/* VİDEO RECİPES */
+.video-recipes {
+  padding: 96px 15px;
+}
+.video-description {
+  font-size: 16px;
+  max-width: 600px;
+  margin: 0 315px 48px 315px;
+  text-align: center;
+}
+.video-recipes .title {
+  padding-bottom: 12px;
+}
+.video-gallery {
+  display: flex;
+  gap: 20pxs;
+}
+
+.video-item {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  margin: 0 15px;
+  width: 600px;
+  height: auto;
+  cursor: pointer;
+}
+
+.video-item img {
+  width: 600px;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.video-play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.video-play-button i {
+  color: var(--icon-color);
+  font-size: 24px;
+}
+
+.video-pagination {
+  display: flex;
+  margin-top: 25px;
+  align-items: center;
+  justify-content: center;
+}
+
+.dot {
+  height: 6px;
+  width: 6px;
+  margin: 0 4px;
+  background-color: var(--btnbgcolor);
+  border-radius: 50%;
+  display: inline-block;
+  border: 1px solid transparent;
+}
+
+.dot.active {
+  border: 2px solid var(--btnbgcolor);
+  background-color: #fff;
+  height: 12px;
+  width: 12px;
+}
+.gallery-caption {
+  display: none;
+  position: absolute;
+  left: 0;
+  bottom: 5px;
+  width: 100%;
+  padding: 1rem 0.5rem;
+  transform: translateY(0.5rem);
+  color: #fff;
+  font-size: 0.875rem;
+  text-align: center;
+  z-index: 5;
+}
+.video-item:hover .gallery-caption {
+  display: block;
+}
+.video-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2); /* Gölgelendirme başlangıç */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.video-item:hover::before {
+  opacity: 1; /* Hover olduğunda gölgeyi göster */
+  background-color: rgba(0, 0, 0, 0.4); /* Hover sırasında gölge daha koyu */
+}
+/* AUTHOR */
+.author {
+  padding-left: 15px;
+  display: flex;
+  gap: 130px;
+}
+.author-image {
+  border-radius: 16px;
+  width: 40%;
+}
+.author-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.author-name {
+  font-size: 32px;
+  color: var(--title-color);
+  margin-bottom: 8px;
+}
+.author-title {
+  font-size: 16px;
+  color: var(--paragraphcolor);
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+.author-description {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 32px;
+}
+/* INSTAGRAM */
+.follow-instagram {
+  padding: 96px 30px 48px 30px;
+}
+.instagram-heading {
+  font-size: 32px;
+  color: var(--title-color);
+  text-align: center;
+  margin-bottom: 48px;
+}
+.instagram-username {
+  background-color: rgba(118, 109, 244, 0.08);
+  font-size: 32px;
+  color: var(--btnbgcolor);
+  padding: 8px;
+  border-radius: 12px;
+}
+
+.instagram-gallery {
+  display: flex;
+  gap: 30px;
+}
+.instagram-image {
+  width: 280px;
+  height: auto;
+}
+/* !FOOTER */
+.footer {
+  padding-top: 80px;
+  background-color: #37384e;
+}
+.footer-title {
+  font-size: 18px;
+  margin-bottom: 20px;
+  line-height: 1.35;
+  color: #fff;
+  font-weight: 600;
+}
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+}
+.contact-item {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: normal;
+  padding-bottom: 15px;
+  cursor: pointer;
+}
+.contact-item:hover {
+  color: #fff;
+}
+.footer .icon-item {
+  color: #fff;
+  display: inline-block;
+  width: 44px;
+  height: 44px;
+  padding: 4px;
+  border: 1px solid var(--icon-color);
+  transition: border-color 0.25s ease-in-out, background-color 0.25s ease-in-out,
+    color 0.25s ease-in-out;
+  border-radius: 12px;
+  font-size: 16px;
+  text-align: center;
+  line-height: 34px;
+}
+
+.footer .fa-facebook-f:hover {
+  color: #3b5998;
+  background-color: #fff;
+  border: 1px solid transparent;
+}
+.footer .fa-twitter:hover {
+  color: #1da1f2;
+  background-color: #fff;
+  border: 1px solid transparent;
+}
+.footer .fa-instagram:hover {
+  color: #5851db;
+  background-color: #fff;
+  border: 1px solid transparent;
+}
+.footer .fa-pinterest-p:hover {
+  color: #bd081c;
+  background-color: #fff;
+  border: 1px solid transparent;
+}
+
+.footer .subscribe-form {
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 400px;
+}
+
+.footer .input-container {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 0 15px;
+  flex: 1;
+  border-radius: 5px 0 0 5px;
+}
+
+.footer .input-icon {
+  color: var(--paragraphcolor);
+  font-size: 16px;
+  margin-right: 8px;
+}
+
+.footer .email-input {
+  border: none;
+  outline: none;
+  padding: 10px;
+  flex: 1;
+  border-radius: 15px 0 0 15px;
+  font-size: 14px;
+  color: var(--paragraphcolor);
+}
+.footer .email-input::placeholder {
+  color: var(--paragraphcolor);
+}
+
+.footer .btn {
+  transition: background-color 0.3s;
+  padding: 7.5px 20px;
+  border-radius: 0 10px 10px 0;
+}
+.subscribe-text {
+  font-size: 12px;
+  margin-top: 6px;
+}
+.subscribe {
+  max-width: 380px;
+}
+.footer-info {
+  padding: 60px 0 32px 0;
+}
+.footer-copyright {
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 14px;
+}
+.footer-copyright-link {
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+}
+.gotoback {
+  position: fixed;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background-color: rgba(55, 56, 78, 0.25);
+  color: #fff;
+  bottom: 40px;
+  right: 50px;
+  text-align: center;
+  line-height: 40px;
+  transition: background-color 0s ease, color 0.3s ease;
+}
+.top {
+  color: rgba(55, 56, 78, 0);
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  transform: translateY(-50%);
+  transition: opacity 0.25s ease-in-out, visibility 0.25s ease-in-out;
+  padding-right: 20px;
+}
+.gotoback:hover {
+  background-color: rgba(55, 56, 78, 0.5);
+}
+.gotoback:hover .top {
+  color: rgba(55, 56, 78, 0.5);
 }
